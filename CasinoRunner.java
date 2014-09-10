@@ -373,152 +373,136 @@ public class CasinoRunner {
       String decision = in.nextLine();
       decision = in.nextLine();
       while (!(decision.equalsIgnoreCase("Makuhita")) && !(decision.equalsIgnoreCase("Azurill")) && !(decision.equalsIgnoreCase("Skitty")) && !(decision.equalsIgnoreCase("Wynaut"))){
-                  System.out.println("That entry is not valid.");
-                  System.out.print("Please select which Pokemon you would like to bet on: ");
-                  decision = in.nextLine();
-                  System.out.println("");
-               }
-               System.out.println("Now please select how much you would like to bet on that spot.");
-               bet = in.nextInt();
-               while (bet > coins || bet < 1)
-               {
-                  System.out.println("That entry is not valid.");
-                  System.out.print("Please enter your bet.");
-                  bet = in.nextInt();
-                  System.out.println("");
-               }
-               int luck = (int) (Math.random() * 4 + 1);
-               if (luck == 1 && decision.equalsIgnoreCase("Makuhita"))
-               {
-                  System.out.println("You won!");
-                  coins = coins + (bet * 4);
-                  System.out.println("You now have " + coins + " coins."); 
-               }
-               else
-                  if (luck == 2 && decision.equalsIgnoreCase("Azurill"))
-                  {
-                     System.out.println("You won!");
-                     coins = coins + (bet * 4);
-                     System.out.println("You now have " + coins + " coins."); 
-                  }
+      	System.out.println("That entry is not valid.");
+        System.out.print("Please select which Pokemon you would like to bet on: ");
+        decision = in.nextLine();
+        System.out.println("");
+      }
+      System.out.println("Now please select how much you would like to bet on that spot.");
+      bet = in.nextInt();
+      while (bet > coins || bet < 1) {
+        System.out.println("That entry is not valid.");
+        System.out.print("Please enter your bet.");
+       	bet = in.nextInt();
+        System.out.println("");
+      }
+      int luck = (int) (Math.random() * 4 + 1);
+      if (luck == 1 && decision.equalsIgnoreCase("Makuhita")) {
+        System.out.println("You won!");
+        coins = coins + (bet * 4);
+        System.out.println("You now have " + coins + " coins."); 
+      }
+      else
+        if (luck == 2 && decision.equalsIgnoreCase("Azurill")) {
+          System.out.println("You won!");
+          coins = coins + (bet * 4);
+          System.out.println("You now have " + coins + " coins."); 
+        }
+        else
+          if (luck == 3 && decision.equalsIgnoreCase("Skitty")) {
+            System.out.println("You won!");
+            coins = coins + (bet * 4);
+            System.out.println("You now have " + coins + " coins."); 
+          }
+          else
+            if (luck == 4 && decision.equalsIgnoreCase("Wynaut")) {
+              System.out.println("You won!");
+              coins = coins + (bet * 4);
+              System.out.println("You now have " + coins + " coins."); 
+            }
+            else {
+              if (luck == 1)
+                toPrint = "Makuhita";
+              else
+                if (luck == 2)
+                  toPrint = "Azurill";
+                else
+                  if (luck == 3)
+                    toPrint = "Skitty";
                   else
-                     if (luck == 3 && decision.equalsIgnoreCase("Skitty"))
-                     {
-                        System.out.println("You won!");
-                        coins = coins + (bet * 4);
-                        System.out.println("You now have " + coins + " coins."); 
-                     }
-                     else
-                        if (luck == 4 && decision.equalsIgnoreCase("Wynaut"))
-                        {
-                           System.out.println("You won!");
-                           coins = coins + (bet * 4);
-                           System.out.println("You now have " + coins + " coins."); 
-                        }
-                        else
-                        {
-                           if (luck == 1)
-                              toPrint = "Makuhita";
-                           else
-                              if (luck == 2)
-                                 toPrint = "Azurill";
-                              else
-                                 if (luck == 3)
-                                    toPrint = "Skitty";
-                                 else
-                                    if (luck == 4)
-                                       toPrint = "Wynaut";
-                                    else
-                                       toPrint = "??";
-                           System.out.println("You lost. The resulting Pokemon was " + toPrint + ".");
-                           coins = coins - bet;
-                           System.out.println("You now have " + coins + " coins."); 
-                        }
-            }
-            if (what == 3)
-            {
-               String toPrint;
-               System.out.println("Please type what color you would like to bet on. An example entry would be \"Yellow\"");
-               String decision = in.nextLine();
-               decision = in.nextLine();
-               while (!(decision.equalsIgnoreCase("Yellow")) && !(decision.equalsIgnoreCase("Green")) && !(decision.equalsIgnoreCase("Purple")))
-               {
-                  System.out.println("That entry is not valid.");
-                  System.out.print("Please select which color you would like to bet on: ");
-                  decision = in.nextLine();
-                  System.out.println("");
-               }
-               System.out.println("Now please select how much you would like to bet on that spot.");
-               bet = in.nextInt();
-               while (bet > coins || bet < 1)
-               {
-                  System.out.println("That entry is not valid.");
-                  System.out.print("Please enter your bet.");
-                  bet = in.nextInt();
-                  System.out.println("");
-               }
-               int luck = (int) (Math.random() * 3 + 1);
-               if (luck == 1 && decision.equalsIgnoreCase("Yellow"))
-               {
-                  System.out.println("You won!");
-                  coins = coins + (bet * 3);
-                  System.out.println("You now have " + coins + " coins."); 
-               }
-               else
-                  if (luck == 2 && decision.equalsIgnoreCase("Green"))
-                  {
-                     System.out.println("You won!");
-                     coins = coins + (bet * 3);
-                     System.out.println("You now have " + coins + " coins."); 
-                  }
+                    if (luck == 4)
+                      toPrint = "Wynaut";
                   else
-                     if (luck == 3 && decision.equalsIgnoreCase("Purple"))
-                     {
-                        System.out.println("You won!");
-                        coins = coins + (bet * 3);
-                        System.out.println("You now have " + coins + " coins."); 
-                     }
-                     else
-                     {
-                        if (luck == 1)
-                           toPrint = "Yellow";
-                        else
-                           if (luck == 2)
-                              toPrint = "Green";
-                           else
-                              if (luck == 3)
-                                 toPrint = "Purple";
-                              else
-                                 toPrint = "??";
-                     
-                        System.out.println("You lost. The resulting color was " + toPrint + ".");
-                        coins = coins - bet;
-                        System.out.println("You now have " + coins + " coins."); 
-                     } 
+                    toPrint = "??";
+            System.out.println("You lost. The resulting Pokemon was " + toPrint + ".");
+            coins = coins - bet;
+            System.out.println("You now have " + coins + " coins."); 
+          }
+      }
+      if (what == 3) {
+        String toPrint;
+        System.out.println("Please type what color you would like to bet on. An example entry would be \"Yellow\"");
+        String decision = in.nextLine();
+        decision = in.nextLine();
+        while (!(decision.equalsIgnoreCase("Yellow")) && !(decision.equalsIgnoreCase("Green")) && !(decision.equalsIgnoreCase("Purple"))) {
+          System.out.println("That entry is not valid.");
+          System.out.print("Please select which color you would like to bet on: ");
+          decision = in.nextLine();
+          System.out.println("");
+        }
+        System.out.println("Now please select how much you would like to bet on that spot.");
+        bet = in.nextInt();
+        while (bet > coins || bet < 1) {
+          System.out.println("That entry is not valid.");
+          System.out.print("Please enter your bet.");
+          bet = in.nextInt();
+          System.out.println("");
+        }
+        int luck = (int) (Math.random() * 3 + 1);
+        if (luck == 1 && decision.equalsIgnoreCase("Yellow")) {
+          System.out.println("You won!");
+          coins = coins + (bet * 3);
+          System.out.println("You now have " + coins + " coins."); 
+        }
+        else
+          if (luck == 2 && decision.equalsIgnoreCase("Green")) {
+            System.out.println("You won!");
+            coins = coins + (bet * 3);
+            System.out.println("You now have " + coins + " coins."); 
+          }
+          else
+            if (luck == 3 && decision.equalsIgnoreCase("Purple")) {
+              System.out.println("You won!");
+              coins = coins + (bet * 3);
+              System.out.println("You now have " + coins + " coins."); 
             }
-            if (coins == 0)
-            {
-               System.out.println("");
-               System.out.println("You have no money left. Goodbye.");
-               break; // Once again, I apologize
-            }
-            System.out.println("");
-            System.out.println("Would you like to keep going? Type 1 to continue, or 0 to quit");
-            int transfer = in.nextInt();
-            System.out.println("");
-            while (transfer != 0 && transfer != 1)
-            {
-               System.out.println("That entry is not valid.");
-               System.out.println("Type 1 to continue, or 0 to quit");
-               transfer = in.nextInt();
-               System.out.println("");
-            }
-            if (transfer == 1)
-               keepGoing = true;
-            else
-               keepGoing = false;
-         }
-         if (keepGoing == false)
+            else {
+              if (luck == 1)
+                toPrint = "Yellow";
+              else
+                if (luck == 2)
+                  toPrint = "Green";
+                else
+                  if (luck == 3)
+                    toPrint = "Purple";
+                  else
+                  	toPrint = "??";
+              System.out.println("You lost. The resulting color was " + toPrint + ".");
+              coins = coins - bet;
+              System.out.println("You now have " + coins + " coins."); 
+            } 
+      }
+      if (coins == 0) {
+        System.out.println("");
+        System.out.println("You have no money left. Goodbye.");
+        break; // Once again, I apologize
+      }
+    System.out.println("");
+    System.out.println("Would you like to keep going? Type 1 to continue, or 0 to quit");
+    int transfer = in.nextInt();
+    System.out.println("");
+    while (transfer != 0 && transfer != 1) {
+      System.out.println("That entry is not valid.");
+      System.out.println("Type 1 to continue, or 0 to quit");
+      transfer = in.nextInt();
+      System.out.println("");
+    }
+    if (transfer == 1)
+    	keepGoing = true;
+    else
+      keepGoing = false;
+    }
+  if (keepGoing == false)
             System.out.println("Wimp");
          System.out.println("You finished with " + coins + " coins.");
       }
